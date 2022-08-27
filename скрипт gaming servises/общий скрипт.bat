@@ -1,24 +1,11 @@
 @echo off
-title —Ñ–∏–∫—Å gaming services
-echo –í–∞—Å –ø—Ä–∏–≤–µ—Ç—Å—Ç–≤—É–µ—Ç —Å–∫—Ä–∏–ø—Ç –¥–ª—è —Ñ–∏–∫—Å–∞ gaming services
-echo –°–¥–µ–ª–∞–ª –ê–ª–µ–∫—Å–µ–π –ö–æ–Ω
+title ‰®™· gaming services
+echo Ç†· Ø‡®¢•‚·‚¢„•‚ ·™‡®Ø‚ §´Ô ‰®™·† gaming services
+echo ë§•´†´ Ä´•™·•© äÆ≠
 pause
-cls
-:start
-echo 1. –£–¥–∞–ª–µ–Ω–∏–µ gaming services –∏ SoftwareDistribution
-echo 2. –ü—Ä–æ–≤–µ—Ä–∫–∞ —Å–∏—Å—Ç–µ–º—ã –Ω–∞ —Ü–µ–ª–æ—Å—Ç–Ω–æ—Å—Ç—å
-echo 3. –∑–∞–ø—É—Å–∫ wsreset
-echo 4. –£—Å—Ç–∞–Ω–æ–≤–∫–∞ gaming services
-set /p choice=–í–≤–µ–¥–∏—Ç–µ —Ü–∏—Ñ—Ä—É 
-if '%choice%'=='1' = goto 1
-if '%choice%'=='2' = goto 2
-if '%choice%'=='3' = goto 3
-if '%choice%'=='4' = goto 4
-goto start
-:1
 title 1
 echo ------------------------
-echo —É–¥–∞–ª–µ–Ω–∏–µ Gaming Services
+echo „§†´•≠®• Gaming Services
 echo ------------------------
 powershell -ExecutionPolicy ByPass -command "get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers"
 reg delete "HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\PolicyCache\Microsoft.GamingServices_8wekyb3d8bbwe"
@@ -27,80 +14,73 @@ reg delete "HKEY_USERS\.DEFAULT\Software\Microsoft\Windows NT\CurrentVersion\Hos
 reg delete "HKEY_USERS\S-1-5-19\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\SystemAppData\Microsoft.GamingServices_8wekyb3d8bbwe"
 reg delete "HKEY_USERS\S-1-5-19\Software\Microsoft\Windows NT\CurrentVersion\HostActivityManager\CommitHistory\Microsoft.GamingServices_8wekyb3d8bbwe!GamingServices"
 echo -----------------------------
-echo —É–¥–∞–ª–µ–Ω–∏–µ SoftwareDistribution
+echo „§†´•≠®• SoftwareDistribution
 echo ----------------------------- 
 del %SystemRoot%\SoftwareDistribution
 mkdir %SystemRoot%\SoftwareDistribution
 color 2
 echo -------
-echo —É—Å–ø–µ—à–Ω–æ
+echo „·Ø•Ë≠Æ
 echo -------
 color 7
-goto exit
-goto start
-:2
 title 2
 echo -------------------------------
-echo –ø—Ä–æ–≤–µ—Ä–∫–∞ —Å–∏—Å—Ç–µ–º—ã –Ω–∞ —Ü–µ–ª–æ—Å—Ç–Ω–æ—Å—Ç—å
+echo Ø‡Æ¢•‡™† ·®·‚•¨Î ≠† Ê•´Æ·‚≠Æ·‚Ï
 echo -------------------------------
 @echo on
 sfc /scannow
 @echo off
 color 2
 echo -------------------------------
-echo —É—Å–ø–µ—à–Ω–æ
+echo „·Ø•Ë≠Æ
 echo -------------------------------
 color 7
-goto exit
-goto start
-:3
 title 3
 echo --------------
-echo –∑–∞–ø—É—Å–∫ wsreset
+echo ß†Ø„·™ wsreset
 echo --------------
 %SystemRoot%\System32\WSReset.exe
 color 2
 echo -------
-echo —É—Å–ø–µ—à–Ω–æ
+echo „·Ø•Ë≠Æ
 echo -------
 color 7
-goto exit
-goto start
-:4
 title 4
-echo –í—ã –º–æ–∂–µ—Ç–µ –ø–æ–ø—Ä–æ–±–æ–≤–∞—Ç—å —Å–∫–∞—á–∞—Ç—å –∏ —É—Å—Ç–∞–Ω–æ–≤–∏—Ç—å gaming services –∞–≤—Ç–æ–º–∞—Ç–∏—á–µ—Å–∫–∏,
-echo –º–æ–∂–µ—Ç –Ω–µ —Ä–∞–±–æ—Ç–∞—Ç—å —Ç.–∫ —è –º–æ–≥—É –∑–∞–±—ã—Ç—å –æ–±–Ω–æ–≤–∏—Ç—å —Å—Å—ã–ª–∫—É –∏ –±—É–¥–µ—Ç –∫–∞—á–∞—Ç—å—Å—è –Ω–µ –ø–æ—Å–ª–µ–¥–Ω—è—è –≤–µ—Ä—Å–∏—è. –ù—É –∏ –æ–Ω–∞ –Ω–µ –±—É–¥–µ—Ç —Ä–∞–±–æ—Ç–∞—Ç—å.
-echo –õ–∏–±–æ –≤—ã –º–æ–∂–µ—Ç–µ —Å–∫–∞—á–∞—Ç—å gaming services –≤ —Ä—É—á–Ω—É—é –∏ —É—Å—Ç–∞–Ω–æ–≤–∏—Ç—å –∏—Ö.
-echo 5. –†—É—á–Ω–∞—è —É—Å—Ç–∞–Ω–æ–≤–∫–∞
-echo 6. –ê–≤—Ç–æ–º–∞—Ç–∏—á–µ—Å–∫–∞—è —É—Å—Ç–∞–Ω–æ–≤–∫–∞
-set /p choice=–í–≤–µ–¥–∏—Ç–µ —Ü–∏—Ñ—Ä—É 
-if '%choice%'=='5' = goto 5
-if '%choice%'=='6' = goto 6
+cls
+:start
+echo ÇÎ ¨Æ¶•‚• ØÆØ‡Æ°Æ¢†‚Ï ·™†Á†‚Ï ® „·‚†≠Æ¢®‚Ï gaming services †¢‚Æ¨†‚®Á•·™®,
+echo ¨Æ¶•‚ ≠• ‡†°Æ‚†‚Ï ‚.™ Ô ¨Æ£„ ß†°Î‚Ï Æ°≠Æ¢®‚Ï ··Î´™„ ® °„§•‚ ™†Á†‚Ï·Ô ≠• ØÆ·´•§≠ÔÔ ¢•‡·®Ô. ç„ ® Æ≠† ≠• °„§•‚ ‡†°Æ‚†‚Ï.
+echo ã®°Æ ¢Î ¨Æ¶•‚• ·™†Á†‚Ï gaming services ¢ ‡„Á≠„Ó ® „·‚†≠Æ¢®‚Ï ®Â.
+echo 1. ê„Á≠†Ô „·‚†≠Æ¢™†
+echo 2. Ä¢‚Æ¨†‚®Á•·™†Ô „·‚†≠Æ¢™†
+set /p choice=Ç¢•§®‚• Ê®‰‡„ 
+if '%choice%'=='1' = goto 1
+if '%choice%'=='2' = goto 2
 goto start
-:5
-echo –ü–µ—Ä–µ–π–¥–∏—Ç–µ –Ω–∞ —Å–∞–π—Ç –∏ –≤—Å—Ç–∞–≤—å—Ç–µ —Å—Å—ã–ª–∫—É –≤ —Å–ø–µ—Ü–∏–∞–ª—å–Ω–æ–µ –ø–æ–ª–µ, –ø–æ—Å–ª–µ —á–µ–≥–æ —Å–∫–∞—á–∞–π—Ç–µ Microsoft.GamingServices_"version"_neutral_~_8wekyb3d8bbwe.appxbundle. –ü–æ—Å–ª–µ —á–µ–≥–æ —É—Å—Ç–∞–Ω–æ–≤–∏—Ç–µ 2 –∫–ª–∏–∫–æ–º
-echo –°–∫–æ–ø–∏—Ä—É–π—Ç–µ —Å—Å—ã–ª–∫—É, (–Ω–µ –æ—Ç–∫—Ä—ã–≤–∞—Ç—å) –ø–æ—Å–ª–µ –Ω–∞–∂–∞—Ç–∏—è –≤—ã –±—É–¥–µ—Ç–µ –ø–µ—Ä–µ–Ω–∞–ø—Ä–∞–≤–ª–µ–Ω–Ω—ã–µ –Ω–∞ —Å–∞–π—Ç –≥–¥–µ –Ω–∞–¥–æ –µ—ë –≤–≤–µ—Å—Ç–∏.
+:1
+echo è•‡•©§®‚• ≠† ·†©‚ ® ¢·‚†¢Ï‚• ··Î´™„ ¢ ·Ø•Ê®†´Ï≠Æ• ØÆ´•, ØÆ·´• Á•£Æ ·™†Á†©‚• Microsoft.GamingServices_"version"_neutral_~_8wekyb3d8bbwe.appxbundle. èÆ·´• Á•£Æ „·‚†≠Æ¢®‚• 2 ™´®™Æ¨
+echo ë™ÆØ®‡„©‚• ··Î´™„, (≠• Æ‚™‡Î¢†‚Ï) ØÆ·´• ≠†¶†‚®Ô ¢Î °„§•‚• Ø•‡•≠†Ø‡†¢´•≠≠Î• ≠† ·†©‚ £§• ≠†§Æ •Ò ¢¢•·‚®.
 echo https://www.microsoft.com/store/productId/9MWPM2CQNLHN
 pause
 start https://store.rg-adguard.net/
 goto exit
 goto start
-:6
+:2
 echo -------------------------
-echo –∑–∞–≥—Ä—É–∑–∫–∞ gaming services
+echo ß†£‡„ß™† gaming services
 echo -------------------------
 cd C:\
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://drive.google.com/uc?export=download&confirm=no_antivirus&id=1YWhb7cw8IbO8jgAUDyQY0a6peniW1QTw', 'Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle')"
 echo -------------------------
-echo —É—Å—Ç–∞–Ω–æ–≤–∫–∞ gaming services
+echo „·‚†≠Æ¢™† gaming services
 echo -------------------------
 powershell -ExecutionPolicy ByPass -command "add-appxpackage -path C:\Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle"
 del "C:\Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle"
 color 2
 echo -------
-echo —É—Å–ø–µ—à–Ω–æ
+echo „·Ø•Ë≠Æ
 echo -------
 goto exit
 :exit
-echo –Ω–∞–¥–µ—é—Å—å —Å–∫—Ä–∏–ø—Ç –≤–∞–º –ø–æ–º–æ–≥
+echo ≠†§•Ó·Ï ·™‡®Ø‚ ¢†¨ ØÆ¨Æ£
 pause

@@ -1,0 +1,58 @@
+@echo off
+title фикс gaming services
+echo Вас приветствует скрипт для фикса gaming services
+echo Сделал Алексей Кон
+pause
+title 1
+echo ------------------------
+echo удаление Gaming Services
+echo ------------------------
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GamingServices"
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\GamingServicesNet"
+powershell -ExecutionPolicy ByPass -command "get-appxpackage Microsoft.GamingServices | remove-AppxPackage -allusers"
+ыыыыыыыыыыыыыыыы
+color 2
+echo -------
+echo успешно
+echo -------
+color 7
+title 2
+echo -------------------------------
+echo проверка системы на целостность
+echo -------------------------------
+@echo on
+sfc /scannow
+@echo off
+color 2
+echo -------------------------------
+echo успешно
+echo -------------------------------
+color 7
+title 3
+echo --------------
+echo запуск wsreset
+echo --------------
+%SystemRoot%\System32\WSReset.exe
+color 2
+echo -------
+echo успешно
+echo -------
+color 7
+title 4
+echo -------------------------
+echo загрузка gaming services
+echo -------------------------
+powershell -ExecutionPolicy ByPass -command "import-module bitstransferimport-module bitstransfer"
+@echo on
+powershell -ExecutionPolicy ByPass -command "start-bitstransfer "http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/795a0271-340f-48e6-aebb-afee0cf99c7c?P1=1661169136&P2=404&P3=2&P4=XBizLKGerAGQOk25to9wxeJrN9Y8Is9NXvLhx4l85QSlnSsLpxu3CxKToQ4c8IisP%2fdHlSQLal0PV1JEyWOvlQ%3d%3d" -destination C:\Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle"
+@echo off
+echo -------
+echo установка gaming services
+echo -------
+powershell -ExecutionPolicy ByPass -command "add-appxpackage -path C:\Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle"
+del "C:\Microsoft.GamingServices_neutral___8wekyb3d8bbwe.AppxBundle"
+color 2
+echo -------
+echo успешно
+echo -------
+pause
